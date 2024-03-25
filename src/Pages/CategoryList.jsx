@@ -5,7 +5,7 @@ const CategoryList = ({ category }) => {
   console.log(category);
   //   const [jobs, setJobs] = useState(null);
   //   useEffect(() => {
-  //     fetch(`https://job-portal-api-rose.vercel.app/allJobs?category=${category}`)
+  //     fetch(`http://localhost:5000/allJobs?category=${category}`)
   //       .then((res) => res.json())
   //       .then((data) => {
   //         // console.log(data);

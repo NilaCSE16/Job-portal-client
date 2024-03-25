@@ -12,7 +12,7 @@ const AllJobs = () => {
   const [jobs, setJobs] = useState(null);
   // console.log(jobs.length);
   useEffect(() => {
-    fetch("https://job-portal-api-rose.vercel.app/jobCount", {
+    fetch("http://localhost:5000/jobCount", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -30,7 +30,7 @@ const AllJobs = () => {
   useEffect(() => {
     jobs &
       fetch(
-        `https://job-portal-api-rose.vercel.app/allJobs?page=${currentPage}&size=${itemsPerPage}`
+        `http://localhost:5000/allJobs?page=${currentPage}&size=${itemsPerPage}`
       )
         .then((res) => res.json())
         .then((data) => {

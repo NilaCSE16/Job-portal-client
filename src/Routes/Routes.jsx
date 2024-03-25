@@ -41,7 +41,7 @@ const router = createBrowserRouter([
             <AllJobs></AllJobs>
           </PrivateRoute>
         ),
-        // loader: () => fetch("https://job-portal-api-rose.vercel.app/allJobs"),
+        // loader: () => fetch("http://localhost:5000/allJobs"),
       },
       {
         path: "/myJobs",

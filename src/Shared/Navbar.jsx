@@ -9,7 +9,7 @@ const Navbar = () => {
   const [loggedUser, setLoggedUser] = useState(user ? user : null);
 
   useEffect(() => {
-    fetch(`https://job-portal-api-rose.vercel.app/users?email=${user?.email}`, {
+    fetch(`http://localhost:5000/users?email=${user?.email}`, {
       method: "GET",
     })
       .then((res) => res.json())

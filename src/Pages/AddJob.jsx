@@ -12,7 +12,7 @@ const AddJob = () => {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    fetch(`https://job-portal-api-rose.vercel.app/users?email=${user?.email}`, {
+    fetch(`http://localhost:5000/users?email=${user?.email}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -49,7 +49,7 @@ const AddJob = () => {
     };
     //   console.log(singleJob);
 
-    fetch("https://job-portal-api-rose.vercel.app/addJob", {
+    fetch("http://localhost:5000/addJob", {
       method: "POST",
       headers: {
         "content-type": "application/json",
