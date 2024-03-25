@@ -35,11 +35,32 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       // console.log(currentUser);
       setLoading(false);
+      const userEmail = currentUser?.email || user?.email;
+      const loggedUser = { email: userEmail };
+      if (currentUser) {
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(loggedUser),
+        }).then(() => {});
+      } else {
+        fetch("http://localhost:5000/logout", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(loggedUser),
+        }).then(() => {});
+      }
     });
     return () => {
       return unsubscribe();
     };
-  }, []);
+  }, [user?.email]);
   const authInfo = {
     user,
     loading,

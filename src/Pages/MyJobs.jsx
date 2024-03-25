@@ -7,7 +7,10 @@ const MyJobs = () => {
   console.log(user?.email);
   const [jobs, setJobs] = useState(null);
   useEffect(() => {
-    fetch(`http://localhost:5000/allJobs?email=${user?.email}`)
+    fetch(`http://localhost:5000/myJobs?email=${user?.email}`, {
+      method: "GET",
+      credentials: "include",
+    })
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
