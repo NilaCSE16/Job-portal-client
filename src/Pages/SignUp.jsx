@@ -17,7 +17,7 @@ const SignUp = () => {
     createUser(email, password)
       .then(() => {
         // console.log(res.user);
-        fetch("http://localhost:5000/users", {
+        fetch("https://job-portal-api-rose.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
