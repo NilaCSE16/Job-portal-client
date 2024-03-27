@@ -17,7 +17,7 @@ const AllJobs = () => {
     })
       // .then((res) => res.json())
       .then((data) => {
-        console.log("data Count: ", data.result);
+        console.log("data Count: ", data);
         setJobLength(data.result);
       });
   }, []);
