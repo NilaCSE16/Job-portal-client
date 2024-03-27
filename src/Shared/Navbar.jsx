@@ -2,30 +2,22 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import logo from "../assets/images/logo.png";
-// import ProgressBar from "@ramonak/react-progress-bar";
 
 const Navbar = () => {
-  const { user, logOut, loading } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   // console.log("USer from Nav: ", user?.email);
   const [loggedUser, setLoggedUser] = useState(user ? user : null);
 
   useEffect(() => {
-    if (!loading) {
-      //   return <ProgressBar completed={100}></ProgressBar>;
-      // } else {
-      fetch(
-        `https://job-portal-api-rose.vercel.app/users?email=${user?.email}`,
-        {
-          method: "GET",
-        }
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          // console.log(data[0]?.photo);
-          setLoggedUser(data[0]?.photo);
-        });
-    }
-  }, [user?.email, loading]);
+    fetch(`https://job-portal-api-rose.vercel.app/users?email=${user?.email}`, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data[0]?.photo);
+        setLoggedUser(data[0]?.photo);
+      });
+  }, [user?.email]);
 
   const [isHover, setHover] = useState(false);
 
