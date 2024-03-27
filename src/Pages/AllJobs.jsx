@@ -15,9 +15,9 @@ const AllJobs = () => {
     fetch("https://job-portal-api-rose.vercel.app/jobCount", {
       method: "GET",
     })
-      .then((res) => res.json())
+      // .then((res) => res.json())
       .then((data) => {
-        // console.log("data Count: ", data.result);
+        console.log("data Count: ", data.result);
         setJobLength(data.result);
       });
   }, []);
