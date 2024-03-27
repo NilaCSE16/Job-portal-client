@@ -55,21 +55,19 @@ const AddJob = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(singleJob),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "You added a job for your company.",
-            icon: "success",
-            confirmButtonColor: "#3085d6",
-            confirmButtonText: "OK",
-          });
-          form.reset();
-        }
-      });
+    }).then((data) => {
+      console.log(data);
+      if (data.insertedId) {
+        Swal.fire({
+          title: "Success!",
+          text: "You added a job for your company.",
+          icon: "success",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
+        });
+        form.reset();
+      }
+    });
   };
 
   return (
