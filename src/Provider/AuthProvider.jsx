@@ -56,7 +56,9 @@ const AuthProvider = ({ children }) => {
             "content-type": "application/json",
           },
           body: JSON.stringify(loggedUser),
-        }).then(() => {});
+        }).then((data) => {
+          console.log(data);
+        });
       }
     });
     return () => {
