@@ -17,7 +17,7 @@ const JobCategory = () => {
 
   const [viewJobs, setViewJobs] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/allJobs")
+    fetch("https://job-portal-api-rose.vercel.app/allJobs")
       .then((res) => res.json())
       .then((data) => {
         setViewJobs(data);
@@ -26,9 +26,12 @@ const JobCategory = () => {
 
   const handleCategory = (category) => {
     // console.log("Index: ", index);
-    fetch(`http://localhost:5000/allJobs?category=${category}`, {
-      method: "GET",
-    })
+    fetch(
+      `https://job-portal-api-rose.vercel.app/allJobs?category=${category}`,
+      {
+        method: "GET",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

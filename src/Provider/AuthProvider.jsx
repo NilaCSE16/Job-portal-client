@@ -38,7 +38,7 @@ const AuthProvider = ({ children }) => {
       const userEmail = currentUser?.email || user?.email;
       const loggedUser = { email: userEmail };
       if (currentUser) {
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://job-portal-api-rose.vercel.app/jwt", {
           method: "POST",
           credentials: "include",
           headers: {
@@ -47,7 +47,7 @@ const AuthProvider = ({ children }) => {
           body: JSON.stringify(loggedUser),
         }).then(() => {});
       } else {
-        fetch("http://localhost:5000/logout", {
+        fetch("https://job-portal-api-rose.vercel.app/logout", {
           method: "POST",
           credentials: "include",
           headers: {

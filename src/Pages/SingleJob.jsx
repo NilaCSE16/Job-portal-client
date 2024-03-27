@@ -14,7 +14,7 @@ const SingleJob = () => {
 
   //   console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:5000/allJobs/${id}`)
+    fetch(`https://job-portal-api-rose.vercel.app/allJobs/${id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data[0]);
@@ -23,7 +23,7 @@ const SingleJob = () => {
   }, [id]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users?email=${job?.email}`, {
+    fetch(`https://job-portal-api-rose.vercel.app/users?email=${job?.email}`, {
       method: "GET",
     })
       .then((res) => res.json())
