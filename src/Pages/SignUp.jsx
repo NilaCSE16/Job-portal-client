@@ -23,21 +23,19 @@ const SignUp = () => {
             "content-type": "application/json",
           },
           body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            // console.log(data);
-            if (data.insertedId) {
-              Swal.fire({
-                title: "Success!",
-                text: "Now you are a member of our Job-portal team",
-                icon: "success",
-                confirmButtonColor: "#3085d6",
-                confirmButtonText: "OK",
-              });
-              form.reset();
-            }
-          });
+        }).then((data) => {
+          // console.log(data);
+          if (data.insertedId) {
+            Swal.fire({
+              title: "Success!",
+              text: "Now you are a member of our Job-portal team",
+              icon: "success",
+              confirmButtonColor: "#3085d6",
+              confirmButtonText: "OK",
+            });
+            form.reset();
+          }
+        });
         form.reset();
       })
       .catch((err) => {
