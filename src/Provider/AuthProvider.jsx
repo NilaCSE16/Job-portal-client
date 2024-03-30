@@ -49,6 +49,7 @@ const AuthProvider = ({ children }) => {
           console.log(data);
         });
       } else {
+        // https://job-portal-api-rose.vercel.app
         fetch("https://job-portal-api-rose.vercel.app/logout", {
           method: "POST",
           credentials: "include",

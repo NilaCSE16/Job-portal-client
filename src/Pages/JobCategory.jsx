@@ -34,7 +34,7 @@ const JobCategory = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setJobs(data);
         setGetJobs(true);
       });
